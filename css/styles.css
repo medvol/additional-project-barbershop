@@ -6,22 +6,66 @@
   --primary-text-color-theme-light: #555555;
   --secondary-text-color-theme-light: #303030;
   --accent-color: #ff6c00;
+  --secondary-background-color: #F7F7F7;
+  --card-gap: 30px;
+  --title-gap: 20px;
 }
 
 body {
   font-family: var(--primary-font-family);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
 }
 
 .list {
+  margin: 0;
+  padding: 0;
+  
   list-style: none;
-}
+  }
 
 .link {
   text-decoration: none;
 }
 
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+.section {
+  padding-top: 130px;
+  padding-bottom: 130px;
+  
+}
+
+.img {
+  display: block;
+}
+
+
 /* ========= START COMPONENTS ========= */
 .modal-btn {
+  border: 1px solid #FF6C00;
+  border-radius: 25px;
+  padding: 12px 20px;
+  min-width: 140px;
+
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
@@ -29,6 +73,7 @@ body {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   cursor: pointer;
+  background-color: transparent;
 
   /*color: #ffffff;*/
 }
@@ -53,6 +98,8 @@ body {
 }
 
 .overtitle {
+  margin-bottom: var(--title-gap);
+
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
@@ -61,14 +108,17 @@ body {
 }
 
 .overtitle-theme-dark {
+    
   color: rgb(var(--primary-text-color-theme-dark), 0.6);
 }
 
 .overtitle-theme-light {
+ 
   color: var(--secondary-text-color-theme-light);
 }
 
 .main-title {
+  margin-bottom: var(--title-gap);
   font-family: var(--secondary-font-family);
   font-weight: 700;
   font-size: 72px;
@@ -96,7 +146,7 @@ body {
   font-family: var(--secondary-font-family);
   font-weight: 700;
   font-size: 42px;
-  line-height: 1.67;
+  line-height: 1.17;
   letter-spacing: 0.05em;
 }
 
@@ -110,6 +160,29 @@ body {
 /* ========= END COMPONENTS ========= */
 
 /* ========= START HEADER ========= */
+.header {
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.logo {
+  margin-right: 70px;
+}
+
+.nav-list>.item:not(:last-child){
+  margin-right: var(--card-gap);
+}
+
 .nav-list-link {
   font-weight: 600;
   font-size: 12px;
@@ -123,11 +196,16 @@ body {
   color: var(--accent-color);
 }
 
+.header-contacts {
+  margin-left: auto;
+}
+
 .contact-number {
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.1em;
+  margin-right: var(--card-gap);
   /* color: #ffffff; */
 }
 
@@ -139,9 +217,48 @@ body {
 /* ========= END HEADER ========= */
 
 /* ========= START HERO ========= */
+.container.hero {
+  display: flex;
+}
+
+.hero-right-side {
+  padding: 208px 452px 208px 96px;
+}
+  
+
 /* ========= END HERO ========= */
 
 /* ========= START ABOUT ========= */
+
+.about .container {
+  display: flex;
+}
+
+.about-gallery {
+  display: flex;
+}
+
+.about-gallery>.item:not(:last-child){
+  margin-right: 30px;
+}
+
+.about-right-side {
+  padding-left: 65px;
+ 
+}
+
+.about-right-side>.title {
+  margin-bottom: var(--title-gap);
+}
+
+.about-right-side>.description {
+  margin-bottom: var(--title-gap);
+}
+
+.about-right-side>.about-text {
+  margin-bottom: var(--title-gap);
+}
+
 .about-text {
   font-weight: 400;
   font-size: 14px;
@@ -152,6 +269,29 @@ body {
 /* ========= END ABOUT ========= */
 
 /* ========= START SERVICES ========= */
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 44px;
+  margin-bottom: 50px;
+ 
+}
+
+.services-btn {
+  text-align: center;
+}
+
+.services-list {
+  flex-basis: calc(100%/2);
+  padding: 30px 40px;
+  
+}
+
+.services-list-item:not(:last-child){
+  margin-bottom: var(--title-gap);
+}
+
 .services-list-name,
 .services-list-price {
   font-weight: 400;
@@ -163,6 +303,19 @@ body {
 /* ========= END SERVICES ========= */
 
 /* ========= START ADVANTAGES ========= */
+
+.advantages>.container {
+  display: flex;
+}
+
+.advantages-right-side{
+padding-left: 130px;
+}
+
+.advantages-right-side>.title {
+  margin-bottom: var(--title-gap);
+}
+
 .advantages-list-quantity {
   font-weight: 700;
   font-size: 42px;
@@ -182,7 +335,35 @@ body {
 /* ========= END ADVANTAGES ========= */
 
 /* ========= START EMPLOYEES ========= */
+.employees-section {
+  background-color: var(--secondary-background-color);
+}
+
+.employees {
+  display: flex;
+  margin-top: 44px;
+}
+
+.employees-card:not(:last-child) {
+  margin-right: var(--card-gap);
+}
+
+.card-content {
+  padding-top: 30px;
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+}
+
+.social-list-item:not(:last-child) {
+  margin-right: 10px;
+}
+
 .employees-name {
+  margin-bottom: 10px;
+
   font-weight: 400;
   font-size: 18px;
   line-height: 1.39;
@@ -192,6 +373,8 @@ body {
 }
 
 .employees-position {
+  margin-bottom: 30px;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 1.36;
@@ -201,9 +384,56 @@ body {
 }
 /* ========= END EMPLOYEES ========= */
 
-/* ========= START HERO ========= */
+/* ========= START GALLERY ========= */
+
+.gallery>.overtitle {
+  margin-bottom: 45px;
+}
+
+.gallery-list {
+  display: flex;
+  
+}
+
+.gallery-list-item:not(:last-child) {
+  margin-right: var(--card-gap);
+}
+
+/* ========= END GALLERY ========= */
+
+/* ========= START CONTACT ========= */
+
+.contact {
+  display: flex;
+}
+
+.contact-form-section {
+  width: calc(100%/2);
+  padding-top: 130px;
+}
+
+.contact-info-section {
+  width: calc(100%/2);
+  padding-top: 130px;
+  padding-bottom: 130px;
+  padding-left: 100px;
+}
+
+.contact-info-section>.title {
+  margin-bottom: 40px;
+}
+
+.contact-list {
+  margin-bottom: 70px;
+}
+
+.contact-info-section>.overtitle{
+  margin-bottom: var(--title-gap);
+}
+
 .contact-list-link {
   font-weight: 400;
+  font-style: normal;
   font-size: 18px;
   line-height: 1.67;
   letter-spacing: 0.02em;
@@ -216,7 +446,7 @@ body {
   letter-spacing: 0.02em;
   color: rgb(var(--primary-text-color-theme-dark));
 }
-/* ========= END HERO ========= */
+/* ========= END CONTACT ========= */
 
 /* ========= START FOOTER ========= */
 .copyright {
@@ -226,6 +456,27 @@ body {
   letter-spacing: 0.2em;
   color: rgb(var(--primary-text-color-theme-dark));
 }
+
+.footer {
+  
+  background-color: var(--secondary-background-color);
+}
+
+.footer>.container {
+  display: flex;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.social-links-list {
+  display: flex;
+  margin-left: auto;
+}
+
+.social-links-list>.item:not(:last-child) {
+  margin-right: var(--card-gap);
+}
+
 /* ========= END FOOTER ========= */
 © 2022 GitHub, Inc.
 Terms
